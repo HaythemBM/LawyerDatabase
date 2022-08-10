@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifier Client</title>
+  </head>
+  <body>
+    <h1>Modifier Ce client</h1>
+    <form action="/clients/<%=client._id%>?_method=PUT" method="POST">
+      <label for="nom">Nom: </label>
+      <input
+        type="text"
+        name="nom"
+        id="nom"
+        placeholder="Nom du client"
+        value="<%=client.nom%>"
+      />
+      <label for="matFisc">Matrice fiscale: </label>
+      <input
+        type="text"
+        name="matFisc"
+        id="matFisc"
+        placeholder="Matrice Fiscale"
+        value="<%=client.matFisc%>"
+      />
+      <label for="adresse">adresse: </label>
+      <input
+        type="text"
+        name="adresse"
+        id="adresse"
+        placeholder="Adresse"
+        value="<%=client.adresse%>"
+      />
+      <label for="tel">Téléphone: </label>
+      <input
+        type="tel"
+        name="tel"
+        id="tel"
+        placeholder="Téléphone"
+        value="<%=client.tel%>"
+      />
+      <label for="email">E-mail: </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="E-mail"
+        value="<%=client.email%>"
+      />
+      <label for="user" hidden>Id de l'avocat: </label>
+      <input
+        type="text"
+        name="user"
+        id="user"
+        value="<%= user._id  %>"
+        hidden
+      />
+      <button>Modifier</button>
+    </form>
+
+    <a href="/clients/<%= user._id  %>/<%=client._id%>">Annuler</a>
+  </body>
+</html>

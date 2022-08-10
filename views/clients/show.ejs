@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= client.nom %></title>
+  </head>
+  <body>
+    <h1><%= client.nom %></h1>
+    <ul>
+      <li><b>Nom: </b><%= client.nom %></li>
+      <li><b>Matrice Fiscale: </b><%= client.matFisc %></li>
+      <li><b>Adresse: </b><%= client.adresse %></li>
+      <li><b>Tel: </b><%= client.tel %></li>
+      <li><b>Email: </b><%= client.email %></li>
+    </ul>
+    <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
+      <button>Supprimer</button>
+    </form>
+    <br />
+    <a href="/dossiers/<%= client._id %>">Voir dossiers</a><br />
+    <a href="/clients/<%= user._id %>/<%= client._id %>/edit">Modifier</a>
+    <br />
+    <a href="/clients/<%= user._id %>">Retour à la page pricipale</a>
+  </body>
+</html>

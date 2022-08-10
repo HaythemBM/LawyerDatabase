@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Client</title>
+  </head>
+  <body>
+    <h1>Ajouter un Client</h1>
+    <form action="/clients" method="POST">
+      <label for="nom">Nom: </label>
+      <input type="text" name="nom" id="nom" placeholder="Nom du client" />
+      <label for="matFisc">Matrice fiscale: </label>
+      <input
+        type="text"
+        name="matFisc"
+        id="matFisc"
+        placeholder="Matrice Fiscale"
+      />
+      <label for="adresse">adresse: </label>
+      <input type="text" name="adresse" id="adresse" placeholder="Adresse" />
+      <label for="tel">Téléphone: </label>
+      <input type="tel" name="tel" id="tel" placeholder="Téléphone" />
+      <label for="email">E-mail: </label>
+      <input type="email" name="email" id="email" placeholder="E-mail" />
+      <label for="user" hidden>Id de l'avocat: </label>
+      <input
+        type="text"
+        name="user"
+        id="user"
+        value="<%= user._id  %>"
+        hidden
+      />
+      <button>Ajouter</button>
+    </form>
+  </body>
+</html>

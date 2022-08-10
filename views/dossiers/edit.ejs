@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un dossier pour <%= client.nom  %></title>
+</head>
+<body>
+    <h1>Modifier le Dossier n° <%= dossier.num  %> pour <%= client.nom  %></h1>
+    <form action="/dossiers/<%=dossier._id%>?_method=PUT" method="POST">
+        <label for="num">Numéro du dossier: </label>
+        <input type="number" name="num" id="num" value="<%= dossier.num %>">
+        <label for="matFisc">sujet: </label>
+        <input type="text" name="sujet" id="sujet" placeholder="sujet" value="<%= dossier.sujet %>">
+        <label for="ref">Reférence: </label>
+        <input type="text" name="ref" id="ref" placeholder="reférence" value="<%= dossier.ref %>">
+        <label for="prix">Prix: </label>
+        <input type="number" name="prix" id="prix" placeholder="Prix" value="<%= dossier.prix %>">
+        <label for="client" hidden>Id du client</label>
+        <input type="text" name="client" id="client" value="<%= client._id  %>" hidden>
+        <button>Modifier</button>
+    </form>
+    <a href="/dossiers/<%=client._id%>">Annuler</a>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dosseier du client <%= client.nom %></title>
+  </head>
+  <body>
+    <h1>dossiers du client <%= client.nom %></h1>
+    <ul>
+      <% for( let dossier of dossiers ) { %>
+      <li>
+        <b>Numéro:</b> <%= dossier.num %><br />
+        <b>Sujet:</b> <%= dossier.sujet %><br />
+        <b>Reférence:</b> <%= dossier.ref %><br />
+        <b>Prix:</b> <%= dossier.prix %><br />
+      </li>
+      <br />
+      <a href="/dossiers/<%= dossier._id %>/edit">Modifier</a>
+      <form action="/dossiers/<%= dossier._id %>?_method=DELETE" method="POST">
+        <button>Supprimer</button>
+      </form>
+      <hr />
+      <br />
+      <% } %>
+    </ul>
+    <a href="/dossiers/<%= client._id %>/new">Nouveau dossier</a><br />
+    <a href="/clients/<%= client.user %>/<%= client._id %>">Retour au client</a>
+    <a href="/clients/<%= client.user %>">Retour à la page pricipale</a>
+  </body>
+</html>
